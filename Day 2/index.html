@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <!--CSS only-->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We"
+      crossorigin="anonymous"
+    />
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="main.js"></script>
+    <title>To Do List</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">ToDo List</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <main class="container">
+      <form id="add-task-form" class="row my-5">
+        <div class="col-5">
+          <input
+            required
+            autocomplete="off"
+            id="add-task-input-title"
+            type="text"
+            placeholder="Title"
+            class="form-control"
+          />
+        </div>
+
+        <div class="col-5">
+          <input
+            required
+            autocomplete="off"
+            id="add-task-input-desc"
+            type="text"
+            placeholder="Description"
+            class="form-control"
+          />
+        </div>
+
+        <div class="col-2">
+          <button type="submit" class="btn btn-primary">
+            Add
+          </button>
+        </div>
+      </form>
+
+      <div id="task-list" class="row g-2">
+        <p class="text-center">There are no tasks</p>
+      </div>
+
+      <!-- Modal -->
+      <div
+        class="modal fade"
+        id="editForm"
+        tabindex="-1"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <form id="edit-form" class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Edit Task</h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <div class="row">
+                <div class="col-12 mb-4">
+                  <input
+                    required
+                    autocomplete="off"
+                    id="edit-task-input-title"
+                    type="text"
+                    placeholder="Title"
+                    class="form-control"
+                  />
+                </div>
+
+                <div class="col-12">
+                  <input
+                    required
+                    autocomplete="off"
+                    id="edit-task-input-desc"
+                    type="text"
+                    placeholder="Description"
+                    class="form-control"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+              >
+                Close
+              </button>
+              <button id="edit-task-btn" type="submit" class="btn btn-primary">
+                Save changes
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
