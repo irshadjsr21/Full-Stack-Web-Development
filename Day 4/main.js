@@ -8,13 +8,15 @@ class MainComponent extends React.Component {
 
   saveToStorage = () => {
     const taskList = JSON.stringify(this.state.tasks);
-    localStorage.setItem('taskList', taskList);
-  }
+    localStorage.setItem("taskList", taskList);
+  };
 
   getFromStorage = () => {
-    const taskList = localStorage.getItem('taskList');
-    this.setState({ tasks: JSON.parse(taskList) });
-  }
+    const taskList = localStorage.getItem("taskList");
+    if (taskList) {
+      this.setState({ tasks: JSON.parse(taskList) });
+    }
+  };
 
   componentDidUpdate() {
     this.saveToStorage();
